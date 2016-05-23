@@ -1,0 +1,13 @@
+Let lamda(G) denote the connectivity of the graph
+	- lambda (x, y) denotes the connectivity between two different nodes x and y.
+	- Gxy be the graph obtained from G by merging nodes x and y.
+	
+For any two nodes x, y
+	- lambda(G) = min{(x, y), (Gxy)}
+
+Such a pair of nodes can be found by using Maximum Adjacency Ordering. An MA ordering V1,...,Vn of the nodes is generated recursively the by the following algorithm:
+	- Take any of the nodes for V1.
+	- Once V1,..,Vi is already chosen, take a node for Vi+1 that has the maximum number of edges connecting it with the set {V1,..,Vi}
+
+Nagamochi and Ibaraki algorithm proves that the Maximum Adjacency Ordering has the following property:
+	- In any MA ordering V1,..,Vn of the nodes lambda(Vn-1, Vn) = d(Vn) holds, where d (Vn) denotes the degree of the node Vn.
